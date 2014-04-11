@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h1 ><strong>My PhotoPosts</strong></h1>
+  <br>
+  <% @user.posts.each do |post|%>
+  <div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img data-src="holder.js/300x200">
+      <div class="caption">
+        <h3><%= post.title %></h3>
+        <p><%= image_tag post.avatar_url(:thumb) %></p>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+</p>	
+<p>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_post_path,
+            :class => 'btn btn-primary' %>
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              users_path, :class => 'btn'  %>
+</p>

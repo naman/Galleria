@@ -1,0 +1,11 @@
+<h1>Hi!</h1>
+
+      <h1>  <%= current_user.name %></h1>
+      <br>
+      <%= link_to t('.My Posts', :default => t("helpers.links.my posts")),
+            current_user,
+            :class => 'btn btn-primary' %>
+       
+        <!-- <%= link_to 'Change Name', edit_user_path(current_user) %> -->
+        <!-- temporary change your name. just for one session! -->
+<br>
